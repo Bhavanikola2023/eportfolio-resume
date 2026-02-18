@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Calculus Capstone Project — Career-Ready Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAFAF7;
+  --surface: #FFFFFF;
+  --surface-alt: #F3F1EC;
+  --text: #1A1A1A;
+  --text-muted: #5C5C5C;
+  --accent: #2D5A3D;
+  --accent-light: #E8F0EB;
+  --accent-warm: #C67D3A;
+  --accent-warm-light: #FDF3E8;
+  --border: #E2DFD8;
+  --check-done: #2D5A3D;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --radius: 10px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #2D5A3D 0%, #1B3D2A 60%, #0F2418 100%);
+  color: white;
+  padding: 3.5rem 2.5rem;
+  border-radius: 16px;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(198,125,58,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 0.75rem;
+}
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.hero p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+  max-width: 600px;
+  position: relative;
+}
+
+/* INFO CARDS ROW */
+.info-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.info-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+}
+.info-card .label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+.info-card .value {
+  font-family: 'Fraunces', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* SECTION HEADING */
+.section-heading {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2.5rem 0 0.5rem;
+  color: var(--text);
+}
+.section-sub {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  margin: 1.5rem 0 2.5rem;
+  padding-left: 2rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--border);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 3px solid var(--accent);
+}
+.timeline-item.milestone::before {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-light);
+}
+.timeline-dates {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.timeline-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0.2rem 0 0.15rem;
+}
+.timeline-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.timeline-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  margin-top: 0.35rem;
+}
+.tag-checkpoint {
+  background: var(--accent-warm-light);
+  color: var(--accent-warm);
+}
+
+/* COLLAPSIBLE PHASE SECTIONS */
+.phase {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s;
+}
+.phase:hover {
+  box-shadow: var(--shadow-md);
+}
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+.phase-header:hover {
+  background: var(--surface-alt);
+}
+.phase-number {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phase-header-text { flex: 1; }
+.phase-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.phase-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.phase-arrow {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+  color: var(--text-muted);
+}
+.phase.open .phase-arrow {
+  transform: rotate(180deg);
+}
+.phase-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.phase.open .phase-body {
+  max-height: 3000px;
+}
+.phase-content {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.phase-content h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--accent);
+}
+.phase-content p, .phase-content li {
+  font-size: 0.93rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* CHECKLISTS */
+.checklist {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--surface-alt);
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--check-done);
+  cursor: pointer;
+}
+.checklist label {
+  cursor: pointer;
+  font-size: 0.93rem;
+}
+.checklist input:checked + label {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* CALLOUT BOXES */
+.callout {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+.callout-tip {
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+}
+.callout-warn {
+  background: var(--accent-warm-light);
+  border-left: 3px solid var(--accent-warm);
+}
+.callout strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* RUBRIC TABLE */
+.rubric-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+table.rubric {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+table.rubric th {
+  background: var(--accent);
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+table.rubric td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+table.rubric tr:nth-child(even) td {
+  background: var(--surface-alt);
+}
+table.rubric .pts {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* RESOURCES */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+.resource-card {
+  background: var(--surface-alt);
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 0.88rem;
+  transition: transform 0.15s;
+}
+.resource-card:hover { transform: translateY(-2px); }
+.resource-card .r-name {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.resource-card .r-desc {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+.resource-card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+.resource-card a:hover { text-decoration: underline; }
+
+/* PROGRESS TRACKER */
+.progress-bar-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.progress-track {
+  background: var(--surface-alt);
+  border-radius: 20px;
+  height: 10px;
+  overflow: hidden;
+}
+.progress-fill {
+  background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.5s ease;
+  width: 0%;
+}
+
+/* FOOTER */
+.guide-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* PRINT */
+@media print {
+  .phase-body { max-height: none !important; }
+  .phase-arrow { display: none; }
+  body { font-size: 12px; }
+  .hero { padding: 2rem; }
+}
+
+/* ATS RULES */
+.ats-rules {
+  margin: 0.75rem 0 1.25rem;
+}
+.ats-rule {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  font-size: 0.93rem;
+}
+.ats-do {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent);
+  width: 22px;
+  text-align: center;
+}
+.ats-dont {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #C0392B;
+  width: 22px;
+  text-align: center;
+}
+
+/* PROMPT CHAIN */
+.prompt-chain {
+  margin: 1rem 0 1.5rem;
+}
+.prompt-step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+.prompt-step-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-warm);
+  padding: 0.75rem 1rem 0;
+}
+.prompt-step-title {
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 0.15rem 1rem 0.5rem;
+  color: var(--text);
+}
+.prompt-box {
+  position: relative;
+  background: var(--surface-alt);
+  padding: 1rem;
+  margin: 0 0.5rem 0.5rem;
+  border-radius: 6px;
+}
+.prompt-box pre {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: var(--text);
+  margin: 0;
+}
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.3rem 0.75rem;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.15s;
+}
+.copy-btn:hover { background: var(--accent-warm); }
+
+/* OPTION CARDS */
+.option-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+.option-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+.option-card .opt-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  color: var(--accent);
+}
+.option-card .opt-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .container { padding: 1rem; }
+  .hero { padding: 2rem 1.5rem; }
+  .hero h1 { font-size: 1.6rem; }
+  .phase-header { padding: 1rem; }
+  .phase-content { padding: 0 1rem 1rem; }
+  table.rubric { font-size: 0.8rem; }
+  table.rubric th, table.rubric td { padding: 0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Pre-Calculus Capstone Project</div>
+  <h1>Career-Ready Portfolio</h1>
+  <p>Build a professional online presence that connects your mathematical thinking to real-world career skills. You will leave this project with a LinkedIn profile, a polished resume, and a personal portfolio you can share with employers and colleges.</p>
+</div>
+
+<!-- KEY INFO -->
+<div class="info-row">
+  <div class="info-card">
+    <div class="label">Start Date</div>
+    <div class="value">February 19</div>
+  </div>
+  <div class="info-card">
+    <div class="label">Final Due Date</div>
+    <div class="value">April 22</div>
+  </div>
+  <div class="info-card">
+    <div class="label">Duration</div>
+    <div class="value">~9 Weeks</div>
+  </div>
+  <div class="info-card">
+    <div class="label">Two Parts</div>
+    <div class="value">Profile + Portfolio</div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-bar-wrap">
+  <div class="progress-label">
+    <span>Your Progress</span>
+    <span id="progress-pct">0%</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+</div>
+
+<!-- PROJECT OVERVIEW -->
+<h2 class="section-heading">What You're Building</h2>
+<p class="section-sub">This project has two connected parts. Each builds on the other.</p>
+
+<div class="info-row">
+  <div class="info-card" style="text-align:left;">
+    <div class="label">Part 1</div>
+    <div class="value" style="font-size:1rem; margin-bottom:0.3rem;">Career-Ready Profile</div>
+    <p style="font-size:0.85rem; color:var(--text-muted);">Create or optimize your LinkedIn profile and develop a professional resume aligned to your career goals.</p>
+  </div>
+  <div class="info-card" style="text-align:left;">
+    <div class="label">Part 2</div>
+    <div class="value" style="font-size:1rem; margin-bottom:0.3rem;">Personal Portfolio</div>
+    <p style="font-size:0.85rem; color:var(--text-muted);">Build a single-page portfolio showcasing your math artifact, skills, resume, and professional story.</p>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<h2 class="section-heading">Timeline & Milestones</h2>
+<p class="section-sub">Follow this schedule to stay on track. Checkpoint dates are when your instructor will review your progress.</p>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-dates">Feb 19 – Mar 4 (Weeks 1–2)</div>
+    <div class="timeline-title">Phase 1: Career Discovery & LinkedIn</div>
+    <div class="timeline-desc">Explore career paths, create/optimize LinkedIn profile, begin networking basics.</div>
+  </div>
+  <div class="timeline-item milestone">
+    <div class="timeline-dates">Mar 4</div>
+    <div class="timeline-title">Checkpoint 1: LinkedIn Profile Live</div>
+    <div class="timeline-desc">Share your LinkedIn profile URL with your instructor.</div>
+    <span class="timeline-tag tag-checkpoint">Instructor Check-In</span>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-dates">Mar 5 – Mar 18 (Weeks 3–4)</div>
+    <div class="timeline-title">Phase 2: Resume Development</div>
+    <div class="timeline-desc">Draft and refine a targeted resume. Get peer feedback.</div>
+  </div>
+  <div class="timeline-item milestone">
+    <div class="timeline-dates">Mar 18</div>
+    <div class="timeline-title">Checkpoint 2: Resume Draft Complete</div>
+    <div class="timeline-desc">Submit resume draft (PDF) for instructor review.</div>
+    <span class="timeline-tag tag-checkpoint">Instructor Check-In</span>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-dates">Mar 19 – Apr 1 (Weeks 5–6)</div>
+    <div class="timeline-title">Phase 3: Math Artifact Creation</div>
+    <div class="timeline-desc">Choose a Pre-Calculus topic and create a real-world application showcase.</div>
+  </div>
+  <div class="timeline-item milestone">
+    <div class="timeline-dates">Apr 1</div>
+    <div class="timeline-title">Checkpoint 3: Math Artifact Draft</div>
+    <div class="timeline-desc">Submit your artifact draft for feedback.</div>
+    <span class="timeline-tag tag-checkpoint">Instructor Check-In</span>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-dates">Apr 2 – Apr 15 (Weeks 7–8)</div>
+    <div class="timeline-title">Phase 4: Portfolio Assembly</div>
+    <div class="timeline-desc">Build your personal portfolio page. Integrate all components.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-dates">Apr 16 – Apr 22 (Week 9)</div>
+    <div class="timeline-title">Phase 5: Final Polish & Submission</div>
+    <div class="timeline-desc">Peer review, final edits, and submission of all deliverables.</div>
+  </div>
+  <div class="timeline-item milestone">
+    <div class="timeline-dates">Apr 22</div>
+    <div class="timeline-title">Final Submission</div>
+    <div class="timeline-desc">All components due on Canvas: LinkedIn URL, Resume PDF, Portfolio link or HTML file.</div>
+    <span class="timeline-tag tag-checkpoint">Final Due Date</span>
+  </div>
+</div>
+
+<!-- PHASE DETAILS -->
+<h2 class="section-heading">Step-by-Step Instructions</h2>
+<p class="section-sub">Expand each phase below for detailed instructions and checklists. Check off tasks as you complete them — your progress bar will update automatically.</p>
+
+<!-- PHASE 1 -->
+<div class="phase open" id="phase1">
+  <div class="phase-header" onclick="togglePhase('phase1')">
+    <div class="phase-number">1</div>
+    <div class="phase-header-text">
+      <div class="phase-title">Career Discovery & LinkedIn Setup</div>
+      <div class="phase-subtitle">Weeks 1–2 · Feb 19 – Mar 4</div>
+    </div>
+    <svg class="phase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="phase-body">
+    <div class="phase-content">
+      <h4>Why This Matters</h4>
+      <p>LinkedIn is the #1 professional networking platform. Over 90% of recruiters use LinkedIn to find candidates. Whether you're transferring to a university, applying for internships, or entering the workforce, a strong LinkedIn profile is your digital first impression.</p>
+
+      <h4>Step-by-Step</h4>
+      <ul class="checklist" data-group="p1">
+        <li><input type="checkbox" id="p1-1" onchange="updateProgress()"><label for="p1-1"><strong>Identify your target career direction.</strong> Write 2–3 sentences about what you want to do after this program. This doesn't have to be final — it's a starting point. Think about: What subjects interest me? What kind of work environment do I want? What industries use math?</label></li>
+        <li><input type="checkbox" id="p1-2" onchange="updateProgress()"><label for="p1-2"><strong>Research 3 job or internship postings</strong> in your area of interest. Note the skills they require. Save the links — you'll reference these when writing your resume.</label></li>
+        <li><input type="checkbox" id="p1-3" onchange="updateProgress()"><label for="p1-3"><strong>Create or update your LinkedIn account</strong> at <a href="https://www.linkedin.com" target="_blank">linkedin.com</a>. Use a professional photo (solid background, good lighting, no sunglasses). If you don't have one, use your phone with a plain wall behind you.</label></li>
+        <li><input type="checkbox" id="p1-4" onchange="updateProgress()"><label for="p1-4"><strong>Write your LinkedIn headline.</strong> Don't just say "Student." Instead, be specific: <em>"Pre-Calculus Student | Aspiring Data Analyst | Math Tutor"</em> — include what you're studying and where you're headed.</label></li>
+        <li><input type="checkbox" id="p1-5" onchange="updateProgress()"><label for="p1-5"><strong>Write your LinkedIn "About" section</strong> (3–5 sentences). Cover: who you are, what you're studying, what you're looking for, and one thing that makes you stand out. Write in first person.</label></li>
+        <li><input type="checkbox" id="p1-6" onchange="updateProgress()"><label for="p1-6"><strong>Add your Education section</strong> with your current school, expected graduation, and relevant coursework.</label></li>
+        <li><input type="checkbox" id="p1-7" onchange="updateProgress()"><label for="p1-7"><strong>Add at least 3 skills</strong> to your LinkedIn profile that relate to your career direction (e.g., Data Analysis, Problem Solving, Microsoft Excel, Mathematical Modeling).</label></li>
+        <li><input type="checkbox" id="p1-8" onchange="updateProgress()"><label for="p1-8"><strong>Connect with at least 5 people</strong> — classmates, instructors, or professionals in your field. Personalize each connection request with a brief message.</label></li>
+      </ul>
+
+      <div class="callout callout-tip">
+        <strong>💡 Pro Tip</strong>
+        Search LinkedIn for people who have the job you want. Look at how they describe their experience and skills. Use similar language in your own profile — this is how recruiters search.
+      </div>
+
+      <h4>Checkpoint 1 — Due Mar 4</h4>
+      <p>Submit your LinkedIn profile URL to Canvas. Your profile should include a photo, headline, About section, Education, and at least 3 skills.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 2 -->
+<div class="phase" id="phase2">
+  <div class="phase-header" onclick="togglePhase('phase2')">
+    <div class="phase-number">2</div>
+    <div class="phase-header-text">
+      <div class="phase-title">Resume Development</div>
+      <div class="phase-subtitle">Weeks 3–4 · Mar 5 – Mar 18</div>
+    </div>
+    <svg class="phase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="phase-body">
+    <div class="phase-content">
+      <h4>Why This Matters</h4>
+      <p>Your resume is the document that gets you interviews. Most companies use Applicant Tracking Systems (ATS) — software that scans and filters resumes before a human ever sees them. If your resume isn't ATS-friendly, it gets rejected automatically, no matter how qualified you are. The instructions below will help you create a resume that passes ATS filters AND looks professional to human readers.</p>
+
+      <h4>ATS-Friendly Resume Rules</h4>
+      <p>Follow these rules so your resume is not rejected by automated systems:</p>
+      <div class="ats-rules">
+        <div class="ats-rule">
+          <span class="ats-do">✓</span>
+          <div><strong>Use a simple, single-column layout.</strong> ATS cannot read multi-column formats, tables, or text boxes. Stick to a straightforward top-to-bottom layout.</div>
+        </div>
+        <div class="ats-rule">
+          <span class="ats-do">✓</span>
+          <div><strong>Use standard section headings.</strong> Use exactly these words: "Professional Summary," "Education," "Experience," "Skills." Creative headings like "My Journey" or "Toolbox" confuse ATS.</div>
+        </div>
+        <div class="ats-rule">
+          <span class="ats-do">✓</span>
+          <div><strong>Use standard fonts.</strong> Calibri, Arial, Georgia, or Times New Roman in 10–12pt. No decorative fonts.</div>
+        </div>
+        <div class="ats-rule">
+          <span class="ats-do">✓</span>
+          <div><strong>Use keywords from the job posting.</strong> If the posting says "data analysis," use those exact words — not "number crunching." Mirror the language of the job description.</div>
+        </div>
+        <div class="ats-rule">
+          <span class="ats-dont">✗</span>
+          <div><strong>No images, icons, logos, or graphics.</strong> ATS can't read them. No headshot, no skill bar charts, no decorative lines.</div>
+        </div>
+        <div class="ats-rule">
+          <span class="ats-dont">✗</span>
+          <div><strong>No headers or footers.</strong> ATS often ignores text in header/footer areas. Put your contact info in the main body of the document.</div>
+        </div>
+        <div class="ats-rule">
+          <span class="ats-dont">✗</span>
+          <div><strong>No fancy Canva resume templates.</strong> They look great but almost always use columns, text boxes, or graphics that break ATS parsing. Use Google Docs or Microsoft Word templates instead.</div>
+        </div>
+      </div>
+
+      <h4>Step-by-Step</h4>
+      <ul class="checklist" data-group="p2">
+        <li><input type="checkbox" id="p2-1" onchange="updateProgress()"><label for="p2-1"><strong>Choose an ATS-friendly resume template.</strong> Use Google Docs (File → New → From template → search "Resume") or a plain Microsoft Word template. Keep it to ONE page with a single-column layout.</label></li>
+        <li><input type="checkbox" id="p2-2" onchange="updateProgress()"><label for="p2-2"><strong>Write your Contact Header</strong> (in the document body, not in the page header): Full name, professional email, phone number, city/state (no full address needed), and LinkedIn URL.</label></li>
+        <li><input type="checkbox" id="p2-3" onchange="updateProgress()"><label for="p2-3"><strong>Write a Professional Summary</strong> (2–3 sentences). State your academic focus, key strengths, and what you're seeking. Include keywords from your target job postings. Example: <em>"Detail-oriented math student with strong analytical and problem-solving skills seeking a summer data analysis internship. Experienced in mathematical modeling, spreadsheet tools, and collaborative problem-solving."</em></label></li>
+        <li><input type="checkbox" id="p2-4" onchange="updateProgress()"><label for="p2-4"><strong>Add your Education section.</strong> School name, degree/program, expected graduation date, GPA (if 3.0+), and relevant coursework.</label></li>
+        <li><input type="checkbox" id="p2-5" onchange="updateProgress()"><label for="p2-5"><strong>Add Experience.</strong> Include jobs, volunteer work, tutoring, or class projects. For each entry, use action verbs and quantify when possible: <em>"Tutored 15+ students in algebra and statistics, improving average test scores by 12%."</em></label></li>
+        <li><input type="checkbox" id="p2-6" onchange="updateProgress()"><label for="p2-6"><strong>Add a Skills section.</strong> Include both hard skills (Excel, Python, data visualization, mathematical modeling) and soft skills (communication, teamwork, time management). Match skills to the job postings you researched in Phase 1.</label></li>
+        <li><input type="checkbox" id="p2-7" onchange="updateProgress()"><label for="p2-7"><strong>Use the AI Prompt Guide below</strong> to analyze a real job posting and tailor your resume to match. This is the most impactful step — it aligns your resume to what employers actually want.</label></li>
+        <li><input type="checkbox" id="p2-8" onchange="updateProgress()"><label for="p2-8"><strong>Proofread carefully.</strong> Read it out loud. Have a classmate review it. Check for: spelling errors, inconsistent formatting, missing dates, and vague descriptions.</label></li>
+        <li><input type="checkbox" id="p2-9" onchange="updateProgress()"><label for="p2-9"><strong>Peer Review.</strong> Exchange resumes with a classmate. Give each other specific feedback using these questions: Is the summary clear? Are action verbs used? Is it easy to scan quickly? Does it follow the ATS rules above?</label></li>
+        <li><input type="checkbox" id="p2-10" onchange="updateProgress()"><label for="p2-10"><strong>Export as PDF.</strong> Always submit resumes as PDFs — they preserve formatting across devices.</label></li>
+      </ul>
+
+      <!-- AI PROMPTING GUIDE -->
+      <h4 id="ai-prompt-guide">🤖 AI Prompt Guide — Tailor Your Resume Like a Pro</h4>
+      <p>Use these prompts with any free AI tool (ChatGPT, Claude, Gemini, or Copilot). They are designed as a chain — each step builds on the previous one. Copy and paste them in order. <strong>Important:</strong> AI gives you a starting draft. You must review, fact-check, and rewrite everything in your own voice before using it.</p>
+
+      <div class="prompt-chain">
+        <div class="prompt-step">
+          <div class="prompt-step-num">Prompt 1</div>
+          <div class="prompt-step-title">Analyze the Job Posting</div>
+          <div class="prompt-box">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>I'm a student building my first professional resume. I found a job/internship posting I'm interested in. Please analyze it step by step:
+
+1. List the top 5 hard skills the employer is looking for.
+2. List the top 3 soft skills the employer is looking for.
+3. Identify any specific keywords or phrases that appear repeatedly.
+4. Identify the experience level expected (entry-level, intern, etc.).
+5. Summarize in 2 sentences what this employer values most in a candidate.
+
+Here is the job posting:
+[PASTE THE FULL JOB POSTING TEXT HERE]</pre>
+          </div>
+        </div>
+
+        <div class="prompt-step">
+          <div class="prompt-step-num">Prompt 2</div>
+          <div class="prompt-step-title">Match Your Experience to the Job</div>
+          <div class="prompt-box">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>Now here is my background. Please think step by step about how my experience connects to this job, even if the connection isn't obvious:
+
+- I'm currently studying: [YOUR PROGRAM, e.g., "Pre-Calculus and General Studies at a community college"]
+- Relevant coursework: [LIST COURSES, e.g., "Pre-Calculus, Statistics, Intro to Business"]
+- Work/volunteer experience: [LIST ANY JOBS, VOLUNTEERING, TUTORING, e.g., "Part-time cashier at Target for 1 year, math tutor for classmates"]
+- Skills I have: [LIST YOUR SKILLS, e.g., "Excel, Google Sheets, problem solving, customer service"]
+- Projects or achievements: [ANY NOTABLE ITEMS, e.g., "Built a data visualization project in my math class"]
+
+Based on the job posting analysis from Prompt 1, please:
+1. Identify which of my experiences are most relevant and explain why.
+2. Suggest how to describe each experience using keywords from the job posting.
+3. Identify any skill gaps and suggest ways I could address them.
+4. Write 3 bullet points for each experience using strong action verbs and the employer's language.</pre>
+          </div>
+        </div>
+
+        <div class="prompt-step">
+          <div class="prompt-step-num">Prompt 3</div>
+          <div class="prompt-step-title">Generate an ATS-Optimized Resume Draft</div>
+          <div class="prompt-box">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>Based on everything we've discussed, please write a complete one-page resume for me. Follow these rules exactly:
+
+FORMAT RULES (ATS-compliant):
+- Single-column layout, no tables or text boxes
+- Use only these section headings in this order: Professional Summary, Education, Experience, Skills
+- Standard font (Calibri or Arial), 10-12pt
+- No icons, images, or graphics of any kind
+- No header or footer — put contact info at the top of the body
+
+CONTENT RULES:
+- Professional Summary: 2-3 sentences using keywords from the job posting
+- Education: Include school, program, expected graduation, GPA if 3.0+, relevant coursework
+- Experience: Use action verbs, quantify results where possible, mirror the job posting language
+- Skills: Combine hard and soft skills, prioritizing those mentioned in the job posting
+
+My contact information:
+- Name: [YOUR NAME]
+- Email: [YOUR EMAIL]
+- Phone: [YOUR PHONE]
+- City, State: [YOUR CITY, STATE]
+- LinkedIn: [YOUR LINKEDIN URL]
+
+Write the complete resume now.</pre>
+          </div>
+        </div>
+
+        <div class="prompt-step">
+          <div class="prompt-step-num">Prompt 4</div>
+          <div class="prompt-step-title">Review & Improve</div>
+          <div class="prompt-box">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>Please review the resume you just created and check it against these criteria:
+
+1. ATS SCAN: Does every section use a standard heading? Are there any formatting elements that would confuse an ATS (tables, columns, graphics)?
+2. KEYWORD MATCH: Compare the resume to the original job posting. What percentage of the key skills and requirements are reflected? What's missing?
+3. IMPACT: Are bullet points specific and results-oriented, or vague and generic? Rewrite any weak bullets.
+4. LENGTH: Is it truly one page at 10-12pt font with normal margins?
+5. TONE: Does it sound professional but authentic — like a real student wrote it, not a robot?
+
+Please provide the improved final version with all fixes applied.</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <strong>⚠️ AI Ethics Reminder</strong>
+        AI is your writing assistant, not your ghostwriter. After using these prompts: (1) Read every word and make sure it's accurate — never claim experience you don't have. (2) Rewrite any sentence that doesn't sound like you. (3) Verify all facts and dates. (4) If your instructor asks, be ready to explain every item on your resume. When you submit, note which AI tool you used.
+      </div>
+
+      <div class="callout callout-tip">
+        <strong>💡 Action Verb Bank</strong>
+        Analyzed · Calculated · Collaborated · Created · Designed · Developed · Evaluated · Implemented · Led · Managed · Modeled · Organized · Presented · Researched · Simplified · Solved · Trained · Visualized
+      </div>
+
+      <div class="callout callout-warn">
+        <strong>⚠️ Common Mistakes to Avoid</strong>
+        Using an unprofessional email address · Including a full home address · Writing "References available upon request" (this is outdated) · Using tiny fonts to squeeze everything onto one page · Listing job duties instead of accomplishments · Using Canva resume templates (they break ATS systems)
+      </div>
+
+      <h4>Checkpoint 2 — Due Mar 18</h4>
+      <p>Upload your resume as a PDF to Canvas. It should include all sections listed above, follow ATS formatting rules, and reflect feedback from your peer review.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 3 -->
+<div class="phase" id="phase3">
+  <div class="phase-header" onclick="togglePhase('phase3')">
+    <div class="phase-number">3</div>
+    <div class="phase-header-text">
+      <div class="phase-title">Math Artifact Creation</div>
+      <div class="phase-subtitle">Weeks 5–6 · Mar 19 – Apr 1</div>
+    </div>
+    <svg class="phase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="phase-body">
+    <div class="phase-content">
+      <h4>Why This Matters</h4>
+      <p>Employers and admissions committees want to see that you can apply math to real-world problems — not just solve textbook exercises. Your math artifact demonstrates that you understand concepts deeply enough to connect them to a career context. This becomes a portfolio piece you can reference in interviews and applications.</p>
+
+      <h4>What Is a Math Artifact?</h4>
+      <p>A concise, visual showcase that demonstrates how a Pre-Calculus concept applies to a real-world scenario. It should be something you're proud to show a future employer or admissions officer. Your instructor will provide a list of approved Pre-Calculus topics to choose from.</p>
+
+      <h4>Artifact Format Options</h4>
+      <p>Choose ONE format for your artifact:</p>
+      <ul class="checklist" data-group="p3format" style="list-style:none;">
+        <li style="border:none; padding:0.3rem 0;"><strong>Option A — Infographic:</strong> A single-page visual (use Canva, free) that explains the math concept, shows the real-world application, and includes at least one graph or calculation.</li>
+        <li style="border:none; padding:0.3rem 0;"><strong>Option B — Mini Case Study:</strong> A 1-page write-up (300–500 words) that presents a real scenario, applies the math, and interprets the results. Include at least one visual (graph, table, or chart).</li>
+        <li style="border:none; padding:0.3rem 0;"><strong>Option C — Data Visualization:</strong> Use a spreadsheet tool (Google Sheets, Excel) to model real data using your Pre-Calculus concept. Include the chart/graph and a short paragraph explaining what the data shows.</li>
+      </ul>
+
+      <h4>Step-by-Step</h4>
+      <ul class="checklist" data-group="p3">
+        <li><input type="checkbox" id="p3-1" onchange="updateProgress()"><label for="p3-1"><strong>Select your Pre-Calculus topic</strong> from the instructor-provided list. Pick something that connects to your career interest if possible.</label></li>
+        <li><input type="checkbox" id="p3-2" onchange="updateProgress()"><label for="p3-2"><strong>Identify a real-world application.</strong> Ask yourself: Where is this math used in the real world? What industry or job uses this? Examples: exponential growth in finance, trigonometric functions in engineering, polynomial models in economics.</label></li>
+        <li><input type="checkbox" id="p3-3" onchange="updateProgress()"><label for="p3-3"><strong>Create your artifact</strong> in your chosen format. Make sure it includes: (1) a clear title, (2) explanation of the math concept, (3) the real-world connection, and (4) at least one visual element.</label></li>
+        <li><input type="checkbox" id="p3-4" onchange="updateProgress()"><label for="p3-4"><strong>Write a brief reflection</strong> (3–5 sentences): What did you learn? How does this math connect to your career goals? This reflection will go in your portfolio.</label></li>
+        <li><input type="checkbox" id="p3-5" onchange="updateProgress()"><label for="p3-5"><strong>Save your artifact</strong> as a PDF or image file. You'll embed it in your portfolio in Phase 4.</label></li>
+      </ul>
+
+      <div class="callout callout-tip">
+        <strong>💡 Career Connection Examples</strong>
+        Nursing → Exponential decay in medication dosage · Business → Logarithmic scales in market analysis · Engineering → Trig functions in signal processing · Education → Polynomial regression in test score trends · IT → Function transformations in data normalization
+      </div>
+
+      <h4>Checkpoint 3 — Due Apr 1</h4>
+      <p>Upload your artifact draft (PDF or image) and your 3–5 sentence reflection to Canvas for instructor feedback.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 4 -->
+<div class="phase" id="phase4">
+  <div class="phase-header" onclick="togglePhase('phase4')">
+    <div class="phase-number">4</div>
+    <div class="phase-header-text">
+      <div class="phase-title">Portfolio Assembly</div>
+      <div class="phase-subtitle">Weeks 7–8 · Apr 2 – Apr 15</div>
+    </div>
+    <svg class="phase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="phase-body">
+    <div class="phase-content">
+      <h4>Why This Matters</h4>
+      <p>An ePortfolio gives you a single link you can share with employers, transfer admissions, and scholarship committees. It tells your professional story in a way that a resume alone cannot. You will maintain and update this portfolio long after this class ends.</p>
+
+      <h4>Choose Your Portfolio Platform</h4>
+      <p>You may build your portfolio using ANY of the following options. Pick the one you're most comfortable with — all are free and produce a professional result:</p>
+
+      <div class="option-cards">
+        <div class="option-card">
+          <div class="opt-name">Option A — HTML Template</div>
+          <div class="opt-desc">Download the instructor-provided template. Edit in any text editor. No account needed. You own the file completely. Host it free on Netlify, GitHub Pages, or Tiiny Host.</div>
+        </div>
+        <div class="option-card">
+          <div class="opt-name">Option B — Google Sites</div>
+          <div class="opt-desc">Drag-and-drop builder. Free with your Google account. Easy to update anytime. Professional URL available. Great if you prefer visual editing.</div>
+        </div>
+        <div class="option-card">
+          <div class="opt-name">Option C — Canva Website</div>
+          <div class="opt-desc">Use Canva's free website templates. Design-focused with modern layouts. Publish directly from Canva. Good if you enjoy visual design.</div>
+        </div>
+        <div class="option-card">
+          <div class="opt-name">Option D — Other Platform</div>
+          <div class="opt-desc">Wix, WordPress, Notion, or any other free portfolio platform is acceptable as long as it meets the requirements below and produces a shareable link.</div>
+        </div>
+      </div>
+
+      <h4>Required Portfolio Sections</h4>
+      <p>Regardless of which platform you choose, your portfolio must include all of these sections:</p>
+      <ul style="margin:0.5rem 0 1rem 1.5rem; font-size:0.93rem;">
+        <li><strong>Header:</strong> Your name, professional tagline, and photo (optional)</li>
+        <li><strong>About Me:</strong> A short professional bio (3–5 sentences)</li>
+        <li><strong>Career Goal:</strong> Your target career direction and why</li>
+        <li><strong>Math Artifact:</strong> Your artifact with title, image/embed, and reflection</li>
+        <li><strong>Skills:</strong> Key skills relevant to your career direction</li>
+        <li><strong>Links:</strong> LinkedIn profile and resume (PDF link)</li>
+        <li><strong>Contact:</strong> Professional email</li>
+      </ul>
+
+      <h4>Step-by-Step</h4>
+      <ul class="checklist" data-group="p4">
+        <li><input type="checkbox" id="p4-1" onchange="updateProgress()"><label for="p4-1"><strong>Choose your platform</strong> from the options above. If using the HTML template, download it from Canvas.</label></li>
+        <li><input type="checkbox" id="p4-2" onchange="updateProgress()"><label for="p4-2"><strong>Set up your portfolio structure</strong> with all 7 required sections listed above.</label></li>
+        <li><input type="checkbox" id="p4-3" onchange="updateProgress()"><label for="p4-3"><strong>Write your About Me</strong> bio (3–5 sentences). You can adapt what you wrote for LinkedIn, but make it slightly more personal and detailed.</label></li>
+        <li><input type="checkbox" id="p4-4" onchange="updateProgress()"><label for="p4-4"><strong>Write your Career Goal</strong> section (2–3 sentences). Be specific about the role or field and explain why it interests you.</label></li>
+        <li><input type="checkbox" id="p4-5" onchange="updateProgress()"><label for="p4-5"><strong>Add your math artifact</strong> — embed the image or PDF and include the title and your reflection below it.</label></li>
+        <li><input type="checkbox" id="p4-6" onchange="updateProgress()"><label for="p4-6"><strong>Add your skills, links</strong> (LinkedIn URL, resume PDF link), and contact email.</label></li>
+        <li><input type="checkbox" id="p4-7" onchange="updateProgress()"><label for="p4-7"><strong>Preview on desktop and mobile.</strong> Resize your browser window or open on your phone to check that everything looks good on both screen sizes.</label></li>
+        <li><input type="checkbox" id="p4-8" onchange="updateProgress()"><label for="p4-8"><strong>Peer Review.</strong> Share your portfolio link or file with a classmate. Have them check: Does it look professional? Is all information accurate? Do all links work? Can they understand your professional story in 30 seconds?</label></li>
+      </ul>
+
+      <div class="callout callout-tip">
+        <strong>💡 Free Hosting Options (for HTML template users)</strong>
+        Publish your portfolio online for free: <strong>Tiiny Host</strong> (tiiny.host — drag and drop, instant URL), <strong>Netlify</strong> (netlify.com — drag and drop), or <strong>GitHub Pages</strong> (github.com — more technical). This gives you a real URL to share on LinkedIn and your resume.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 5 -->
+<div class="phase" id="phase5">
+  <div class="phase-header" onclick="togglePhase('phase5')">
+    <div class="phase-number">5</div>
+    <div class="phase-header-text">
+      <div class="phase-title">Final Polish & Submission</div>
+      <div class="phase-subtitle">Week 9 · Apr 16 – Apr 22</div>
+    </div>
+    <svg class="phase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="phase-body">
+    <div class="phase-content">
+      <h4>Final Checklist</h4>
+      <ul class="checklist" data-group="p5">
+        <li><input type="checkbox" id="p5-1" onchange="updateProgress()"><label for="p5-1"><strong>Review all instructor feedback</strong> from Checkpoints 1–3 and make final revisions.</label></li>
+        <li><input type="checkbox" id="p5-2" onchange="updateProgress()"><label for="p5-2"><strong>Update your LinkedIn profile</strong> — add your portfolio link to the "Featured" section and the Contact Info section.</label></li>
+        <li><input type="checkbox" id="p5-3" onchange="updateProgress()"><label for="p5-3"><strong>Finalize your resume</strong> — add the portfolio URL if you've published it online.</label></li>
+        <li><input type="checkbox" id="p5-4" onchange="updateProgress()"><label for="p5-4"><strong>Do a complete quality check</strong> of your portfolio: spelling, grammar, link functionality, image display, mobile responsiveness (resize your browser window to check).</label></li>
+        <li><input type="checkbox" id="p5-5" onchange="updateProgress()"><label for="p5-5"><strong>Submit all three deliverables to Canvas:</strong> (1) LinkedIn profile URL, (2) Resume PDF, (3) Portfolio link or HTML file.</label></li>
+      </ul>
+
+      <div class="callout callout-warn">
+        <strong>⚠️ Before You Submit</strong>
+        Open your portfolio HTML file on a different device (phone or another computer) to make sure it looks good everywhere. Ask someone outside this class to look at it — if they can understand your professional story in 30 seconds, you've done it well.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RUBRIC -->
+<h2 class="section-heading">Grading Rubric</h2>
+<p class="section-sub">100 points total. The rubric uses a checklist format — each item is either complete or incomplete.</p>
+
+<div class="rubric-wrap">
+  <table class="rubric">
+    <thead>
+      <tr>
+        <th>Component</th>
+        <th>Requirements</th>
+        <th style="text-align:center;">Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LinkedIn Profile</strong></td>
+        <td>Professional photo, custom headline, About section (3–5 sentences), Education, 3+ skills, 5+ connections</td>
+        <td class="pts">20</td>
+      </tr>
+      <tr>
+        <td><strong>Resume</strong></td>
+        <td>One page, PDF format, ATS-compliant (single-column, standard headings, no graphics). Includes: contact header, professional summary, education, experience/activities, skills. No spelling errors. Action verbs used.</td>
+        <td class="pts">20</td>
+      </tr>
+      <tr>
+        <td><strong>Math Artifact</strong></td>
+        <td>Pre-Calculus topic from approved list, clear real-world application, at least one visual (graph/chart/diagram), professional presentation.</td>
+        <td class="pts">25</td>
+      </tr>
+      <tr>
+        <td><strong>Portfolio Page</strong></td>
+        <td>All 7 required sections complete (header, about, career goal, artifact + reflection, skills, links, contact). Clean layout. All links functional. Viewable via submitted link or HTML file.</td>
+        <td class="pts">25</td>
+      </tr>
+      <tr>
+        <td><strong>Checkpoints</strong></td>
+        <td>All 3 checkpoints submitted on time to Canvas (LinkedIn by Mar 4, Resume by Mar 18, Artifact by Apr 1).</td>
+        <td class="pts">10</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- FREE TOOLS -->
+<h2 class="section-heading">Recommended Free Tools</h2>
+<p class="section-sub">All tools below are free. You are not required to use AI tools, but they can help speed up your work.</p>
+
+<div class="resource-grid">
+  <div class="resource-card">
+    <div class="r-name">LinkedIn</div>
+    <div class="r-desc">Professional networking & profile</div>
+    <a href="https://www.linkedin.com" target="_blank">linkedin.com →</a>
+  </div>
+  <div class="resource-card">
+    <div class="r-name">Google Docs</div>
+    <div class="r-desc">Resume templates & writing</div>
+    <a href="https://docs.google.com" target="_blank">docs.google.com →</a>
+  </div>
+  <div class="resource-card">
+    <div class="r-name">Canva</div>
+    <div class="r-desc">Infographics, artifact visuals, portfolio websites (not for ATS resumes)</div>
+    <a href="https://www.canva.com" target="_blank">canva.com →</a>
+  </div>
+  <div class="resource-card">
+    <div class="r-name">Google Sheets</div>
+    <div class="r-desc">Data analysis & charting</div>
+    <a href="https://sheets.google.com" target="_blank">sheets.google.com →</a>
+  </div>
+  <div class="resource-card">
+    <div class="r-name">Desmos</div>
+    <div class="r-desc">Graphing calculator for math visuals</div>
+    <a href="https://www.desmos.com" target="_blank">desmos.com →</a>
+  </div>
+  <div class="resource-card">
+    <div class="r-name">Tiiny Host</div>
+    <div class="r-desc">Publish your HTML portfolio online (free)</div>
+    <a href="https://tiiny.host" target="_blank">tiiny.host →</a>
+  </div>
+</div>
+
+<div class="callout callout-tip" style="margin-top:1.5rem;">
+  <strong>💡 Optional AI Tools</strong>
+  You may use free AI tools like ChatGPT, Claude, or Gemini to help brainstorm, draft, or proofread your resume and About section. <strong>Important rule:</strong> Any AI-generated text must be reviewed, edited, and personalized by you. Your final work should sound like you, not a chatbot. If you use AI, note which tool you used and how.
+</div>
+
+<!-- FOOTER -->
+<div class="guide-footer">
+  <p>Pre-Calculus Capstone Project — Career-Ready Portfolio Guide</p>
+  <p>Questions? Ask your instructor during class or office hours.</p>
+</div>
+
+</div><!-- end container -->
+
+<script>
+function togglePhase(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+function copyPrompt(btn) {
+  const pre = btn.parentElement.querySelector('pre');
+  navigator.clipboard.writeText(pre.textContent).then(() => {
+    btn.textContent = 'Copied!';
+    btn.style.background = '#2D5A3D';
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.style.background = '';
+    }, 2000);
+  }).catch(() => {
+    // Fallback for older browsers
+    const range = document.createRange();
+    range.selectNode(pre);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+  });
+}
+
+function updateProgress() {
+  const all = document.querySelectorAll('.checklist input[type="checkbox"]');
+  const checked = document.querySelectorAll('.checklist input[type="checkbox"]:checked');
+  const pct = all.length ? Math.round((checked.length / all.length) * 100) : 0;
+  document.getElementById('progress-pct').textContent = pct + '%';
+  document.getElementById('progress-fill').style.width = pct + '%';
+  // Save to localStorage
+  const state = {};
+  all.forEach(cb => { state[cb.id] = cb.checked; });
+  try { localStorage.setItem('capstone-progress', JSON.stringify(state)); } catch(e){}
+}
+
+// Restore saved progress
+function restoreProgress() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('capstone-progress'));
+    if (saved) {
+      Object.keys(saved).forEach(id => {
+        const cb = document.getElementById(id);
+        if (cb) cb.checked = saved[id];
+      });
+      updateProgress();
+    }
+  } catch(e){}
+}
+restoreProgress();
+</script>
+
+</body>
+</html>
