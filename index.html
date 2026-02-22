@@ -636,14 +636,14 @@ table.rubric .pts {
 
 <div class="timeline">
   <div class="timeline-item">
-    <div class="timeline-dates">Feb 19 – Mar 4 (Weeks 1–2)</div>
-    <div class="timeline-title">Phase 1: Career Discovery & LinkedIn</div>
-    <div class="timeline-desc">Explore career paths, create/optimize LinkedIn profile, begin networking basics.</div>
+    <div class="timeline-dates">Feb 23 – Mar 4 (Weeks 1–2)</div>
+    <div class="timeline-title">Phase 1: Career Discovery & Professional Profile</div>
+    <div class="timeline-desc">Explore career paths, research job postings, and create your LinkedIn profile or Professional Bio PDF.</div>
   </div>
   <div class="timeline-item milestone">
     <div class="timeline-dates">Mar 4</div>
-    <div class="timeline-title">Checkpoint 1: LinkedIn Profile Live</div>
-    <div class="timeline-desc">Share your LinkedIn profile URL with your instructor.</div>
+    <div class="timeline-title">Checkpoint 1: Professional Profile Live</div>
+    <div class="timeline-desc">Share your LinkedIn profile URL or upload your Professional Bio PDF to Canvas.</div>
     <span class="timeline-tag tag-checkpoint">Instructor Check-In</span>
   </div>
   <div class="timeline-item">
@@ -681,7 +681,7 @@ table.rubric .pts {
   <div class="timeline-item milestone">
     <div class="timeline-dates">Apr 22</div>
     <div class="timeline-title">Final Submission</div>
-    <div class="timeline-desc">All components due on Canvas: LinkedIn URL, Resume PDF, Portfolio link or HTML file.</div>
+    <div class="timeline-desc">All components due on Canvas: LinkedIn URL or Bio PDF, Resume PDF, Portfolio link or HTML file.</div>
     <span class="timeline-tag tag-checkpoint">Final Due Date</span>
   </div>
 </div>
@@ -695,35 +695,65 @@ table.rubric .pts {
   <div class="phase-header" onclick="togglePhase('phase1')">
     <div class="phase-number">1</div>
     <div class="phase-header-text">
-      <div class="phase-title">Career Discovery & LinkedIn Setup</div>
-      <div class="phase-subtitle">Weeks 1–2 · Feb 19 – Mar 4</div>
+      <div class="phase-title">Career Discovery & Professional Profile</div>
+      <div class="phase-subtitle">Weeks 1-2 · Feb 23 - Mar 4</div>
     </div>
     <svg class="phase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
   </div>
   <div class="phase-body">
     <div class="phase-content">
       <h4>Why This Matters</h4>
-      <p>LinkedIn is the #1 professional networking platform. Over 90% of recruiters use LinkedIn to find candidates. Whether you're transferring to a university, applying for internships, or entering the workforce, a strong LinkedIn profile is your digital first impression.</p>
+      <p>Before you write a resume, you need to know what you're aiming for. This phase helps you research career paths, identify the skills employers want, and build a professional profile that positions you for opportunities. The career research you do here feeds directly into your resume in Phase 2.</p>
 
-      <h4>Step-by-Step</h4>
+      <h4>Choose Your Profile Path</h4>
+      <p>You have two options for your professional profile. Both teach the same skills. Let your instructor know which one you're choosing.</p>
+
+      <div class="option-cards">
+        <div class="option-card">
+          <div class="opt-name">Option A: LinkedIn Profile (Recommended)</div>
+          <div class="opt-desc">Create or optimize a real LinkedIn profile. This is the industry standard platform used by over 90% of recruiters. You'll build a profile that works for you long after this class ends.</div>
+        </div>
+        <div class="option-card">
+          <div class="opt-name">Option B: Professional Bio PDF</div>
+          <div class="opt-desc">If you prefer not to create a LinkedIn profile (due to age, privacy, or personal reasons), you'll create a one-page Professional Bio PDF with the same content: headline, about section, education, and skills.</div>
+        </div>
+      </div>
+
+      <h4>Step-by-Step (Both Paths)</h4>
       <ul class="checklist" data-group="p1">
-        <li><input type="checkbox" id="p1-1" onchange="updateProgress()"><label for="p1-1"><strong>Identify your target career direction.</strong> Write 2–3 sentences about what you want to do after this program. This doesn't have to be final — it's a starting point. Think about: What subjects interest me? What kind of work environment do I want? What industries use math?</label></li>
-        <li><input type="checkbox" id="p1-2" onchange="updateProgress()"><label for="p1-2"><strong>Research 3 job or internship postings</strong> in your area of interest. Note the skills they require. Save the links — you'll reference these when writing your resume.</label></li>
+        <li><input type="checkbox" id="p1-1" onchange="updateProgress()"><label for="p1-1"><strong>Identify your target career direction.</strong> Write 2-3 sentences about what you want to do after this program. This doesn't have to be final -- it's a starting point. Think about: What subjects interest me? What kind of work environment do I want? What industries use math?</label></li>
+        <li><input type="checkbox" id="p1-2" onchange="updateProgress()"><label for="p1-2"><strong>Research 3 job or internship postings</strong> in your area of interest. Note the skills they require. Save the links -- you'll reference these when writing your resume in Phase 2. This is the most important step in the entire project because it shapes everything that follows.</label></li>
+      </ul>
+
+      <h4>If You Chose Option A: LinkedIn</h4>
+      <ul class="checklist" data-group="p1a">
         <li><input type="checkbox" id="p1-3" onchange="updateProgress()"><label for="p1-3"><strong>Create or update your LinkedIn account</strong> at <a href="https://www.linkedin.com" target="_blank">linkedin.com</a>. Use a professional photo (solid background, good lighting, no sunglasses). If you don't have one, use your phone with a plain wall behind you.</label></li>
-        <li><input type="checkbox" id="p1-4" onchange="updateProgress()"><label for="p1-4"><strong>Write your LinkedIn headline.</strong> Don't just say "Student." Instead, be specific: <em>"Pre-Calculus Student | Aspiring Data Analyst | Math Tutor"</em> — include what you're studying and where you're headed.</label></li>
-        <li><input type="checkbox" id="p1-5" onchange="updateProgress()"><label for="p1-5"><strong>Write your LinkedIn "About" section</strong> (3–5 sentences). Cover: who you are, what you're studying, what you're looking for, and one thing that makes you stand out. Write in first person.</label></li>
+        <li><input type="checkbox" id="p1-4" onchange="updateProgress()"><label for="p1-4"><strong>Write your LinkedIn headline.</strong> Don't just say "Student." Instead, be specific: <em>"Pre-Calculus Student | Aspiring Data Analyst | Math Tutor"</em> -- include what you're studying and where you're headed.</label></li>
+        <li><input type="checkbox" id="p1-5" onchange="updateProgress()"><label for="p1-5"><strong>Write your LinkedIn "About" section</strong> (3-5 sentences). Cover: who you are, what you're studying, what you're looking for, and one thing that makes you stand out. Write in first person.</label></li>
         <li><input type="checkbox" id="p1-6" onchange="updateProgress()"><label for="p1-6"><strong>Add your Education section</strong> with your current school, expected graduation, and relevant coursework.</label></li>
         <li><input type="checkbox" id="p1-7" onchange="updateProgress()"><label for="p1-7"><strong>Add at least 3 skills</strong> to your LinkedIn profile that relate to your career direction (e.g., Data Analysis, Problem Solving, Microsoft Excel, Mathematical Modeling).</label></li>
-        <li><input type="checkbox" id="p1-8" onchange="updateProgress()"><label for="p1-8"><strong>Connect with at least 5 people</strong> — classmates, instructors, or professionals in your field. Personalize each connection request with a brief message.</label></li>
+        <li><input type="checkbox" id="p1-8" onchange="updateProgress()"><label for="p1-8"><strong>Connect with at least 5 people</strong> -- classmates, instructors, or professionals in your field. Personalize each connection request with a brief message.</label></li>
+      </ul>
+
+      <h4>If You Chose Option B: Professional Bio PDF</h4>
+      <ul class="checklist" data-group="p1b">
+        <li><input type="checkbox" id="p1-9" onchange="updateProgress()"><label for="p1-9"><strong>Create a one-page document</strong> in Google Docs or Word with the heading "Professional Bio" and your full name.</label></li>
+        <li><input type="checkbox" id="p1-10" onchange="updateProgress()"><label for="p1-10"><strong>Write a professional headline</strong> (one line). Same guidance as LinkedIn: be specific about your field and direction. Example: <em>"Pre-Calculus Student | Aspiring Data Analyst | Math Tutor"</em></label></li>
+        <li><input type="checkbox" id="p1-11" onchange="updateProgress()"><label for="p1-11"><strong>Write an "About Me" section</strong> (3-5 sentences). Cover: who you are, what you're studying, what you're looking for, and one thing that makes you stand out.</label></li>
+        <li><input type="checkbox" id="p1-12" onchange="updateProgress()"><label for="p1-12"><strong>Add an Education section</strong> with your current school, program, expected graduation, and relevant coursework.</label></li>
+        <li><input type="checkbox" id="p1-13" onchange="updateProgress()"><label for="p1-13"><strong>Add a Skills section</strong> listing at least 5 skills relevant to your career direction, including both hard and soft skills.</label></li>
+        <li><input type="checkbox" id="p1-14" onchange="updateProgress()"><label for="p1-14"><strong>Export as PDF</strong> and review for spelling, grammar, and professional appearance.</label></li>
       </ul>
 
       <div class="callout callout-tip">
         <strong>💡 Pro Tip</strong>
-        Search LinkedIn for people who have the job you want. Look at how they describe their experience and skills. Use similar language in your own profile — this is how recruiters search.
+        Whether you're building a LinkedIn profile or a bio PDF, search job postings for the role you want and look at how they describe required skills. Use that same language in your own profile -- this is exactly how recruiters search, and it's the same strategy you'll use in Phase 2 to tailor your resume.
       </div>
 
-      <h4>Checkpoint 1 — Due Mar 4</h4>
-      <p>Submit your LinkedIn profile URL to Canvas. Your profile should include a photo, headline, About section, Education, and at least 3 skills.</p>
+      <h4>Checkpoint 1 -- Due Mar 4</h4>
+      <p><strong>LinkedIn path:</strong> Submit your LinkedIn profile URL to Canvas.<br>
+      <strong>Bio PDF path:</strong> Upload your Professional Bio PDF to Canvas.<br>
+      Both must include: headline, about section, education, and skills.</p>
     </div>
   </div>
 </div>
@@ -920,7 +950,7 @@ Please provide the improved final version with all fixes applied.</pre>
       <p>Employers and admissions committees want to see that you can apply math to real-world problems — not just solve textbook exercises. Your math artifact demonstrates that you understand concepts deeply enough to connect them to a career context. This becomes a portfolio piece you can reference in interviews and applications.</p>
 
       <h4>What Is a Math Artifact?</h4>
-      <p>A concise, visual showcase that demonstrates how a Pre-Calculus concept applies to a real-world scenario. It should be something you're proud to show a future employer or admissions officer. Your instructor will provide a list of approved Pre-Calculus topics to choose from.</p>
+      <p>A concise, visual showcase that demonstrates how a Pre-Calculus concept applies to a real-world scenario. It should be something you're proud to show a future employer or admissions officer. You may choose any Pre-Calculus topic covered in this course. Pick a topic you feel confident about and that connects to your career interests if possible.</p>
 
       <h4>Artifact Format Options</h4>
       <p>Choose ONE format for your artifact:</p>
@@ -932,7 +962,7 @@ Please provide the improved final version with all fixes applied.</pre>
 
       <h4>Step-by-Step</h4>
       <ul class="checklist" data-group="p3">
-        <li><input type="checkbox" id="p3-1" onchange="updateProgress()"><label for="p3-1"><strong>Select your Pre-Calculus topic</strong> from the instructor-provided list. Pick something that connects to your career interest if possible.</label></li>
+        <li><input type="checkbox" id="p3-1" onchange="updateProgress()"><label for="p3-1"><strong>Select your Pre-Calculus topic.</strong> Choose any topic covered in this course (e.g., polynomial functions, exponential/logarithmic models, trigonometric functions, rational functions, sequences and series, conic sections, systems of equations). Pick something that connects to your career interest if possible.</label></li>
         <li><input type="checkbox" id="p3-2" onchange="updateProgress()"><label for="p3-2"><strong>Identify a real-world application.</strong> Ask yourself: Where is this math used in the real world? What industry or job uses this? Examples: exponential growth in finance, trigonometric functions in engineering, polynomial models in economics.</label></li>
         <li><input type="checkbox" id="p3-3" onchange="updateProgress()"><label for="p3-3"><strong>Create your artifact</strong> in your chosen format. Make sure it includes: (1) a clear title, (2) explanation of the math concept, (3) the real-world connection, and (4) at least one visual element.</label></li>
         <li><input type="checkbox" id="p3-4" onchange="updateProgress()"><label for="p3-4"><strong>Write a brief reflection</strong> (3–5 sentences): What did you learn? How does this math connect to your career goals? This reflection will go in your portfolio.</label></li>
@@ -995,7 +1025,7 @@ Please provide the improved final version with all fixes applied.</pre>
         <li><strong>Career Goal:</strong> Your target career direction and why</li>
         <li><strong>Math Artifact:</strong> Your artifact with title, image/embed, and reflection</li>
         <li><strong>Skills:</strong> Key skills relevant to your career direction</li>
-        <li><strong>Links:</strong> LinkedIn profile and resume (PDF link)</li>
+        <li><strong>Links:</strong> LinkedIn profile URL (or note "Professional Bio available upon request" if you chose the Bio PDF path) and resume (PDF link)</li>
         <li><strong>Contact:</strong> Professional email</li>
       </ul>
 
@@ -1034,10 +1064,10 @@ Please provide the improved final version with all fixes applied.</pre>
       <h4>Final Checklist</h4>
       <ul class="checklist" data-group="p5">
         <li><input type="checkbox" id="p5-1" onchange="updateProgress()"><label for="p5-1"><strong>Review all instructor feedback</strong> from Checkpoints 1–3 and make final revisions.</label></li>
-        <li><input type="checkbox" id="p5-2" onchange="updateProgress()"><label for="p5-2"><strong>Update your LinkedIn profile</strong> — add your portfolio link to the "Featured" section and the Contact Info section.</label></li>
+        <li><input type="checkbox" id="p5-2" onchange="updateProgress()"><label for="p5-2"><strong>Update your professional profile</strong> -- if using LinkedIn, add your portfolio link to the "Featured" section and Contact Info. If using the Bio PDF, add your portfolio URL to the document.</label></li>
         <li><input type="checkbox" id="p5-3" onchange="updateProgress()"><label for="p5-3"><strong>Finalize your resume</strong> — add the portfolio URL if you've published it online.</label></li>
         <li><input type="checkbox" id="p5-4" onchange="updateProgress()"><label for="p5-4"><strong>Do a complete quality check</strong> of your portfolio: spelling, grammar, link functionality, image display, mobile responsiveness (resize your browser window to check).</label></li>
-        <li><input type="checkbox" id="p5-5" onchange="updateProgress()"><label for="p5-5"><strong>Submit all three deliverables to Canvas:</strong> (1) LinkedIn profile URL, (2) Resume PDF, (3) Portfolio link or HTML file.</label></li>
+        <li><input type="checkbox" id="p5-5" onchange="updateProgress()"><label for="p5-5"><strong>Submit all three deliverables to Canvas:</strong> (1) LinkedIn profile URL or Bio PDF, (2) Resume PDF, (3) Portfolio link or HTML file.</label></li>
       </ul>
 
       <div class="callout callout-warn">
@@ -1063,28 +1093,28 @@ Please provide the improved final version with all fixes applied.</pre>
     </thead>
     <tbody>
       <tr>
-        <td><strong>LinkedIn Profile</strong></td>
-        <td>Professional photo, custom headline, About section (3–5 sentences), Education, 3+ skills, 5+ connections</td>
+        <td><strong>Professional Profile</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Checkpoint 1 &middot; Mar 4</span></td>
+        <td>LinkedIn profile (photo, headline, About, Education, 3+ skills, 5+ connections) OR Professional Bio PDF (headline, About Me, Education, 5+ skills). Professional and complete.</td>
         <td class="pts">20</td>
       </tr>
       <tr>
-        <td><strong>Resume</strong></td>
+        <td><strong>Resume</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Checkpoint 2 &middot; Mar 18</span></td>
         <td>One page, PDF format, ATS-compliant (single-column, standard headings, no graphics). Includes: contact header, professional summary, education, experience/activities, skills. No spelling errors. Action verbs used.</td>
         <td class="pts">20</td>
       </tr>
       <tr>
-        <td><strong>Math Artifact</strong></td>
-        <td>Pre-Calculus topic from approved list, clear real-world application, at least one visual (graph/chart/diagram), professional presentation.</td>
+        <td><strong>Math Artifact</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Checkpoint 3 &middot; Apr 1</span></td>
+        <td>Pre-Calculus topic covered in this course, clear real-world application, at least one visual (graph/chart/diagram), professional presentation. Includes 3-5 sentence reflection.</td>
         <td class="pts">25</td>
       </tr>
       <tr>
-        <td><strong>Portfolio Page</strong></td>
+        <td><strong>Portfolio Page</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Final &middot; Apr 22</span></td>
         <td>All 7 required sections complete (header, about, career goal, artifact + reflection, skills, links, contact). Clean layout. All links functional. Viewable via submitted link or HTML file.</td>
         <td class="pts">25</td>
       </tr>
       <tr>
-        <td><strong>Checkpoints</strong></td>
-        <td>All 3 checkpoints submitted on time to Canvas (LinkedIn by Mar 4, Resume by Mar 18, Artifact by Apr 1).</td>
+        <td><strong>Checkpoint Participation</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Tracked across all</span></td>
+        <td>All 3 checkpoints submitted on time to Canvas (Profile by Mar 4, Resume by Mar 18, Artifact by Apr 1).</td>
         <td class="pts">10</td>
       </tr>
     </tbody>
